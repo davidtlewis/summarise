@@ -17,12 +17,12 @@ def parse_netex_fares(file_path):
     for tariff in root.findall('.//netex:Tariff', ns):
         tariff_id = tariff.get('id')
         tariff_name = tariff.find('.//netex:Name', ns).text if tariff.find('.//netex:Name', ns) is not None else None
-        fare_type = tariff.find('.//netex:TypeOfTariffRef', ns).get('ref') if tariff.find('.//netex:TypeOfTariffRef', ns) is not None else None
+        tariff_type = tariff.find('.//netex:TypeOfTariffRef', ns).get('ref') if tariff.find('.//netex:TypeOfTariffRef', ns) is not None else None
 
         tariffs.append({
             'tariff_id': tariff_id,
             'tariff_name': tariff_name,
-            'fare_type': fare_type
+            'tariff_type': tariff_type
         })
 
     # Extracting fare structure elements

@@ -1,4 +1,6 @@
 from lxml import etree
+import re
+import argparse
 
 class NeTExFareExplorer:
     def __init__(self, filepath):
@@ -64,6 +66,7 @@ class NeTExFareExplorer:
         print(f"Found FareZone for stop: {start_zone_id} - {zone_name}")
 
         # Step 2: Find the first DistanceMatrixElement for this FareZone
+        # first try for case of a OD matrix
         distance_matrix_element = self.find_first_distance_matrix_element(start_zone_id)
         if distance_matrix_element is None:
             print("No DistanceMatrixElement found from the starting FareZone.")
@@ -77,7 +80,7 @@ class NeTExFareExplorer:
         end_zone_id = end_zone_ref.get("ref")
 
         # Add DistanceMatrixElement to path
-        path.append((distance_matrix_element.tag, distance_matrix_element.get("id"),f"using to Zone ID: {end_zone_id}"))
+        path.append((distance_matrix_element.tag, distance_matrix_element.get("id"),f"Example To Zone ID: {end_zone_id}"))
 
         
         
@@ -94,10 +97,30 @@ class NeTExFareExplorer:
         # Step 3: Output the trace path
         print("Trace Path:")
         for tag, elem_id, details in path:
-            print(f">>>{tag} (ID: {elem_id}): {details}")
+            # trim off the ns
+            tagname = re.sub(r'^.*?}','',tag)
+            print(f">>>{tagname} (ID: {elem_id}): {details}")
 
 # Usage
-file_path = '../xml/GNEL_1_Outbound_AdultSingle.xml'
-start_stop_id = 'atco:410000041010'  # Example starting ScheduledStopPoint ID
+parser = argparse.ArgumentParser(description="within a single netex file, trace from a stop through to an assocoiated fare price to check the structure of the xml..")
+parser.add_argument('-f','--file_path', help="Netex fares XML file")
+parser.add_argument('-s','--start_stop', help="Start stop id")
+parser.add_argument('-e','--end_stop', help="End stop id")
+
+
+# Parse command-line arguments
+args = parser.parse_args()
+
+file_path = args.file_path
+start_stop_id = args.start_stop
+end_stop_id = args.end_stop
+
+
+print(file_path)
+print(start_stop_id)
+print(end_stop_id)
+
+# file_path = '/Users/David.Lewis/Downloads/bods_data/thames_valley_13413_2024-10-30_16-07-52/CTNY_7_Inbound_AdultSingle_255c59b5-e83e-4d65-9e13-fbb0a3271606_638658790006873538.xml'
+# start_stop_id = 'atco:036006003014'  # Example starting ScheduledStopPoint ID
 explorer = NeTExFareExplorer(file_path)
 explorer.follow_single_link_to_price(start_stop_id)

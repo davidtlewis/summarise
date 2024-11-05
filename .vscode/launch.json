@@ -1,0 +1,17 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python Debugger: Current File",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${file}",
+            "python": "/Users/David.Lewis/Documents/dev/venv/bin/python",
+            "args": ["--file_path=/Users/David.Lewis/Downloads/bods/stagecoach/FX_PI_01_UK_SCNE_LINE_FARE_101t_I_Hpool‐Adult‐Single‐Zone_wef-20240331_20240327-1110.xml"],
+            "console": "integratedTerminal"
+        }
+    ]
+}
