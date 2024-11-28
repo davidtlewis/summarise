@@ -75,7 +75,7 @@ with open(csv_file_path, mode='w', newline='') as file:
     writer = csv.writer(file)
 
     # Write the header row (column names)
-    writer.writerow(["productname", "productType", "triptype", "UserType", "farestructuretype", "linepubliccode", "operator", "has_zones","has_distancematrix","has_pricegroups","has_faretable","dir" "file"])
+    writer.writerow(["productname", "productType", "triptype", "UserType", "farestructuretype", "linepubliccode", "operator", "has_zones","has_distancematrix","has_pricegroups","has_faretable","dir" ,"file"])
 
     for root, dirs, files in os.walk(dir):
     # for filename in os.listdir(dir):

@@ -125,10 +125,10 @@ if __name__ == "__main__":
     path.append((fare_zone.tag, start_zone_id, zone_name))
     print(f"Found FareZone for stop: {start_zone_id} - {zone_name}")
 
-    #  find anything containing ref to the zone in a farestructurelement and show the path back up to FSE
+    # Step 2  find anything containing ref to the zone in a farestructurelement and show the path back up to FSE
     find_containing_fse(fare_zone)
     
-    # Step 2: Find the first DistanceMatrixElement for this FareZone
+    # Step 3: Find the first DistanceMatrixElement for this FareZone
     # first try for case of a OD matrix
     distance_matrix_element =  find_first_distance_matrix_element(start_zone_id)
     if distance_matrix_element is None:

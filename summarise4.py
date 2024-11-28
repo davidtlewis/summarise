@@ -82,7 +82,7 @@ if __name__ == "__main__":
     # Display extracted information
     print("Tariff Information:")
     for tariff in data['tariffs']:
-        print(f"ID: {tariff['tariff_id']}, Name: {tariff['tariff_name']}, Fare Type: {tariff['fare_type']}")
+        print(f" ID: {tariff['tariff_id']}\n Name: {tariff['tariff_name']}\n Fare Type: {tariff['tariff_type']}")
 
     print("\nFare Structure Elements Information:")
     for element in data['fare_structure_elements']:
