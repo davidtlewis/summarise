@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Interactive Graph</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/viz.js/2.1.2/viz.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/viz.js/2.1.2/full.render.js"></script>
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="graph" style="width: 100%; height: 100%;"></div>
+    <script>
+        fetch('graph.dot')
+            .then(response => response.text())
+            .then(dot => {
+                var viz = new Viz();
+                viz.renderSVGElement(dot)
+                    .then(function (element) {
+                        document.getElementById('graph').appendChild(element);
+
+                        // Add click event listeners to nodes
+                        d3.selectAll('g.node').on('click', function () {
+                            var node = d3.select(this);
+                            var nodeId = node.attr('id');
+
+                            // Toggle visibility of edges and connected nodes
+                            d3.selectAll('g.edge').each(function () {
+                                var edge = d3.select(this);
+                                if (edge.attr('id').includes(nodeId)) {
+                                    edge.classed('hidden', !edge.classed('hidden'));
+                                    var targetNodeId = edge.attr('id').split('->')[1];
+                                    d3.select('#' + targetNodeId).classed('hidden', !d3.select('#' + targetNodeId).classed('hidden'));
+                                }
+                            });
+                        });
+                    })
+                    .catch(error => {
+                        console.error(error);
+                    });
+            });
+    </script>
+</body>
+
+</html>

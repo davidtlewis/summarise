@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Interactive Graph</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/viz.js/2.1.2/viz.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/viz.js/2.1.2/full.render.js"></script>
+</head>
+
+<body>
+    <div id="graph" style="width: 100%; height: 100%;"></div>
+    <script>
+        fetch('graph.dot')
+            .then(response => response.text())
+            .then(dot => {
+                var viz = new Viz();
+                viz.renderSVGElement(dot)
+                    .then(function (element) {
+                        document.getElementById('graph').appendChild(element);
+                    })
+                    .catch(error => {
+                        console.error(error);
+                    });
+            });
+    </script>
+</body>
+
+</html>
