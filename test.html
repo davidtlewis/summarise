@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Interactive Graph</title>
+    <script src="//d3js.org/d3.v7.min.js"></script>
+    <script src="https://unpkg.com/@hpcc-js/wasm@2.20.0/dist/graphviz.umd.js"></script>
+    <script src="https://unpkg.com/d3-graphviz@5.6.0/build/d3-graphviz.js"></script>
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="graph" style="width: 100%; height: 100%;"></div>
+    <script>
+        fetch('test.dot')
+            .then(response => response.text())
+            .then(dot => {
+                d3.select("#graph").graphviz()
+                    .transition(function () {
+                        return d3.transition("main")
+                            .ease(d3.easeLinear)
+                            .duration(1000);
+                    })
+                    .renderDot(dot)
+
+            })
+            .catch(error => {
+                console.error(error);
+            });
+    </script>
+</body>
+
+</html>

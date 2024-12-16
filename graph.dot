@@ -1,248 +1,552 @@
 digraph {
-	137382273024912 [label=dataObjects
+	node0 [label=dataObjects
 ]
-	137382273025104 [label="CompositeFrame
+	node1 [label="CompositeFrame
 version: 1.0
 id: epd:UK:RBUS:CompositeFrame_UK_PI_LINE_FARE_OFFER:Trip@Line_RBUS:PH0005856:176:X4:op
 dataSourceRef: data_source
-responsibilitySetRef: tariffs"]
-	137382273024912 -> 137382273025104
-	137382273025232 [label=ValidBetween
+responsibilitySetRef: tariffs
+Name: Fares for Line X4 Outbound
+Description: Boost Single zone to zone fare triangle for Reading Transport (RBUS) X4 Outbound"]
+	node0 -> node1 [id="node0->node1"]
+	node2 [label=ValidBetween
 ]
-	137382273025104 -> 137382273025232
-	137382273025424 [label=FromDate
-]
-	137382273025232 -> 137382273025424
-	137382273025680 [label=Name
-]
-	137382273025104 -> 137382273025680
-	137382273025936 [label=Description
-]
-	137382273025104 -> 137382273025936
-	137382273026192 [label="TypeOfFrameRef
+	node1 -> node2 [id="node1->node2"]
+	node3 [label="FromDate
+
+Text: 2015-08-31T00:00:00Z"]
+	node2 -> node3 [id="node2->node3"]
+	node4 [label="TypeOfFrameRef
 ref: fxc:UK:DFT:TypeOfFrame_UK_PI_LINE_FARE_OFFER:FXCP"]
-	137382273025104 -> 137382273026192
-	137382273026384 [label=codespaces
+	node1 -> node4 [id="node1->node4"]
+	node5 [label=FrameDefaults
 ]
-	137382273025104 -> 137382273026384
-	137382273026576 [label="CodespaceRef
-ref: atco_cs"]
-	137382273026384 -> 137382273026576
-	137382273026704 [label="CodespaceRef
+	node1 -> node5 [id="node1->node5"]
+	node6 [label="DefaultCodespaceRef
 ref: op_cs"]
-	137382273026384 -> 137382273026704
-	137382273026832 [label="CodespaceRef
-ref: nptgLocality"]
-	137382273026384 -> 137382273026832
-	137382273026960 [label="CodespaceRef
-ref: noc"]
-	137382273026384 -> 137382273026960
-	137382273027152 [label=FrameDefaults
-]
-	137382273025104 -> 137382273027152
-	137382273027344 [label="DefaultCodespaceRef
-ref: op_cs"]
-	137382273027152 -> 137382273027344
-	137382273027472 [label="DefaultDataSourceRef
+	node5 -> node6 [id="node5->node6"]
+	node7 [label="DefaultDataSourceRef
 ref: data_source
 version: 1.0"]
-	137382273027152 -> 137382273027472
-	137382273027600 [label=DefaultCurrency
+	node5 -> node7 [id="node5->node7"]
+	node8 [label="DefaultCurrency
+
+Text: GBP"]
+	node5 -> node8 [id="node5->node8"]
+	node9 [label=frames
 ]
-	137382273027152 -> 137382273027600
-	137382273027856 [label=frames
-]
-	137382273025104 -> 137382273027856
-	137382273028048 [label="ResourceFrame
+	node1 -> node9 [id="node1->node9"]
+	node10 [label="ResourceFrame
 version: 1.0
 id: epd:UK:RBUS:ResourceFrame_UK_PI_COMMON:op
 dataSourceRef: data_source
-responsibilitySetRef: network_data"]
-	137382273027856 -> 137382273028048
-	137382273028176 [label=Name
-]
-	137382273028048 -> 137382273028176
-	137382273028432 [label="TypeOfFrameRef
+responsibilitySetRef: network_data
+Name: Operator specific common resources"]
+	node9 -> node10 [id="node9->node10"]
+	node11 [label="TypeOfFrameRef
 ref: fxc:UK:DFT:TypeOfFrame_UK_PI_COMMON:FXCP
 version: fxc:v1.0"]
-	137382273028048 -> 137382273028432
-	137382273028560 [label=codespaces
+	node10 -> node11 [id="node10->node11"]
+	node12 [label=dataSources
 ]
-	137382273028048 -> 137382273028560
-	137382273030032 [label=dataSources
+	node10 -> node12 [id="node10->node12"]
+	node13 [label="DataSource
+id: data_source
+version: 1.0"]
+	node12 -> node13 [id="node12->node13"]
+	node14 [label="Email
+
+Text: TODO"]
+	node13 -> node14 [id="node13->node14"]
+	node15 [label=organisations
 ]
-	137382273028048 -> 137382273030032
-	137382273030608 [label=organisations
-]
-	137382273028048 -> 137382273030608
-	137382273031504 [label="ServiceFrame
+	node10 -> node15 [id="node10->node15"]
+	node16 [label="Operator
+id: noc:RBUS
+version: 1.0
+Name: Reading Transport"]
+	node15 -> node16 [id="node15->node16"]
+	node17 [label="PublicCode
+
+Text: RBUS"]
+	node16 -> node17 [id="node16->node17"]
+	node10 -> node13 [color=blue style=dashed]
+	node18 [label="ServiceFrame
 version: 1.0
 id: epd:UK:RBUS:ServiceFrame_UK_PI_NETWORK:RBUS:PH0005856:176:X4:op
 dataSourceRef: data_source
-responsibilitySetRef: tariffs"]
-	137382273027856 -> 137382273031504
-	137382273031632 [label=Description
-]
-	137382273031504 -> 137382273031632
-	137382273031888 [label="TypeOfFrameRef
+responsibilitySetRef: tariffs
+Description: This frame contains the stop and line definitions for the service."]
+	node9 -> node18 [id="node9->node18"]
+	node19 [label="TypeOfFrameRef
 ref: fxc:UK:DFT:TypeOfFrame_UK_PI_NETWORK:FXCP
 version: fxc:v1.0"]
-	137382273031504 -> 137382273031888
-	137382273032016 [label=lines
+	node18 -> node19 [id="node18->node19"]
+	node20 [label=lines
 ]
-	137382273031504 -> 137382273032016
-	137382273033808 [label=scheduledStopPoints
-]
-	137382273031504 -> 137382273033808
-	137382271301136 [label="FareFrame
+	node18 -> node20 [id="node18->node20"]
+	node21 [label="Line
+version: 1.0
+id: RBUS:PH0005856:176:X4
+Name: Reading Transport X4 Outbound
+Description: Reading (St. Mary's Butts) - Bracknell Bus Station"]
+	node20 -> node21 [id="node20->node21"]
+	node22 [label="PublicCode
+
+Text: X4"]
+	node21 -> node22 [id="node21->node22"]
+	node23 [label="PrivateCode
+
+Text: RBUS_X4"]
+	node21 -> node23 [id="node21->node23"]
+	node24 [label="OperatorRef
+version: 1.0
+ref: noc:RBUS"]
+	node21 -> node24 [id="node21->node24"]
+	node25 [label="LineType
+
+Text: local"]
+	node21 -> node25 [id="node21->node25"]
+	node26 [label="FareFrame
 id: epd:UK:RBUS:FareFrame_UK_PI_FARE_NETWORK:RBUS:PH0005856:176:X4:op
 version: 1.0
 dataSourceRef: data_source
 responsibilitySetRef: network_data"]
-	137382273027856 -> 137382271301136
-	137382271301264 [label="TypeOfFrameRef
+	node9 -> node26 [id="node9->node26"]
+	node27 [label="TypeOfFrameRef
 ref: fxc:UK:DFT:TypeOfFrame_UK_PI_NETWORK:FXCP
 version: fxc:v1.0"]
-	137382271301136 -> 137382271301264
-	137382271301392 [label=fareZones
-]
-	137382271301136 -> 137382271301392
-	137382271333328 [label="FareFrame
+	node26 -> node27 [id="node26->node27"]
+	node28 [label="FareFrame
 version: 1.0
 id: epd:UK:RBUS:FareFrame_UK_PI_FARE_PRODUCT:Line_RBUS:PH0005856:176:X4:op
 dataSourceRef: data_source
 responsibilitySetRef: tariffs"]
-	137382273027856 -> 137382271333328
-	137382271333456 [label="TypeOfFrameRef
+	node9 -> node28 [id="node9->node28"]
+	node29 [label="TypeOfFrameRef
 ref: fxc:UK:DFT:TypeOfFrame_UK_PI_FARE_PRODUCT:FXCP
 version: fxc:v1.0"]
-	137382271333328 -> 137382271333456
-	137382271333584 [label=tariffs
+	node28 -> node29 [id="node28->node29"]
+	node30 [label=tariffs
 ]
-	137382271333328 -> 137382271333584
-	137382271575312 [label=fareProducts
+	node28 -> node30 [id="node28->node30"]
+	node31 [label="Tariff
+id: Tariff@BoostSingle@Line_RBUS:PH0005856:176:X4
+version: 1.0
+Name: Reading Transport X4 Outbound - Boost Single fares"]
+	node30 -> node31 [id="node30->node31"]
+	node32 [label=validityConditions
 ]
-	137382271333328 -> 137382271575312
-	137382271576528 [label=salesOfferPackages
+	node31 -> node32 [id="node31->node32"]
+	node33 [label=ValidBetween
 ]
-	137382271333328 -> 137382271576528
-	137382271581712 [label="FareFrame
+	node32 -> node33 [id="node32->node33"]
+	node34 [label="FromDate
+
+Text: 2023-11-01T00:00:00"]
+	node33 -> node34 [id="node33->node34"]
+	node35 [label="ToDate
+
+Text: 2024-12-31T00:00:00"]
+	node33 -> node35 [id="node33->node35"]
+	node36 [label="OperatorRef
+version: 1.0
+ref: noc:RBUS"]
+	node31 -> node36 [id="node31->node36"]
+	node37 [label="LineRef
+ref: RBUS:PH0005856:176:X4
+version: 1.0"]
+	node31 -> node37 [id="node31->node37"]
+	node38 [label="TypeOfTariffRef
+version: fxc:v1.0
+ref: fxc:point_to_point"]
+	node31 -> node38 [id="node31->node38"]
+	node39 [label="TariffBasis
+
+Text: pointToPoint"]
+	node31 -> node39 [id="node31->node39"]
+	node40 [label=qualityStructureFactors
+]
+	node31 -> node40 [id="node31->node40"]
+	node41 [label="FareDemandFactor
+id: op@Tariff@Demand
+version: 1.0"]
+	node40 -> node41 [id="node40->node41"]
+	node42 [label=validityConditions
+]
+	node41 -> node42 [id="node41->node42"]
+	node43 [label="AvailabilityCondition
+id: op@Tariff@Condition@31d65961-77c0-4ea2-aeec-dcab9d8f41a6
+version: 1.0"]
+	node42 -> node43 [id="node42->node43"]
+	node44 [label="IsAvailable
+
+Text: true"]
+	node43 -> node44 [id="node43->node44"]
+	node45 [label=dayTypes
+]
+	node43 -> node45 [id="node43->node45"]
+	node46 [label="FareDayType
+id: op@Tariff@DayType@31d65961-77c0-4ea2-aeec-dcab9d8f41a6
+version: 1.0"]
+	node45 -> node46 [id="node45->node46"]
+	node47 [label=properties
+]
+	node46 -> node47 [id="node46->node47"]
+	node48 [label=PropertyOfDay
+]
+	node47 -> node48 [id="node47->node48"]
+	node49 [label="DaysOfWeek
+
+Text: Monday Tuesday Wednesday Thursday Friday Saturday Sunday"]
+	node48 -> node49 [id="node48->node49"]
+	node50 [label=fareStructureElements
+]
+	node31 -> node50 [id="node31->node50"]
+	node51 [label="FareStructureElement
+id: Tariff@BoostSingle@access
+version: 1.0
+Name: O/D pairs for Line X4 Outbound"]
+	node50 -> node51 [id="node50->node51"]
+	node52 [label="TypeOfFareStructureElementRef
+ref: fxc:access
+version: fxc:v1.0"]
+	node51 -> node52 [id="node51->node52"]
+	node51 [label="GenericParameterAssignment
+version: 1.0
+order: 01
+id: Tariff@BoostSingle@access"]
+	node51 -> node51 [id="node51->node51"]
+	node53 [label="TypeOfAccessRightAssignmentRef
+version: fxc:v1.0
+ref: fxc:can_access"]
+	node51 -> node53 [id="node51->node53"]
+	node54 [label="ValidityParameterAssignmentType
+
+Text: EQ"]
+	node51 -> node54 [id="node51->node54"]
+	node55 [label=validityParameters
+]
+	node51 -> node55 [id="node51->node55"]
+	node56 [label="FareStructureElement
+id: Tariff@BoostSingle@eligibility
+version: 1.0
+Name: Eligible user types"]
+	node50 -> node56 [id="node50->node56"]
+	node57 [label="TypeOfFareStructureElementRef
+version: fxc:v1.0
+ref: fxc:eligibility"]
+	node56 -> node57 [id="node56->node57"]
+	node56 [label="GenericParameterAssignment
+order: 1
+id: Tariff@BoostSingle@eligibility
+version: 1.0"]
+	node56 -> node56 [id="node56->node56"]
+	node58 [label="TypeOfAccessRightAssignmentRef
+version: fxc:v1.0
+ref: fxc:eligible"]
+	node56 -> node58 [id="node56->node58"]
+	node59 [label="LimitationGroupingType
+
+Text: XOR"]
+	node56 -> node59 [id="node56->node59"]
+	node60 [label=limitations
+]
+	node56 -> node60 [id="node56->node60"]
+	node61 [label="UserProfile
+version: 1.0
+id: Pass:UserProfile:youngPerson
+Name: Young Person"]
+	node60 -> node61 [id="node60->node61"]
+	node62 [label="UserType
+
+Text: youngPerson"]
+	node61 -> node62 [id="node61->node62"]
+	node63 [label="FareStructureElement
+id: Tariff@BoostSingle@conditions_of_travel
+version: 1.0
+Name: Conditions of travel"]
+	node50 -> node63 [id="node50->node63"]
+	node64 [label="TypeOfFareStructureElementRef
+version: fxc:v1.0
+ref: fxc:travel_conditions"]
+	node63 -> node64 [id="node63->node64"]
+	node63 [label="GenericParameterAssignment
+version: 1.0
+order: 1
+id: Tariff@BoostSingle@conditions_of_travel"]
+	node63 -> node63 [id="node63->node63"]
+	node65 [label="TypeOfAccessRightAssignmentRef
+version: fxc:v1.0
+ref: fxc:condition_of_use"]
+	node63 -> node65 [id="node63->node65"]
+	node66 [label="LimitationGroupingType
+
+Text: AND"]
+	node63 -> node66 [id="node63->node66"]
+	node67 [label=limitations
+]
+	node63 -> node67 [id="node63->node67"]
+	node68 [label="RoundTrip
+version: 1.0
+id: Trip@travel@condition@direction"]
+	node67 -> node68 [id="node67->node68"]
+	node69 [label="TripType
+
+Text: single"]
+	node68 -> node69 [id="node68->node69"]
+	node70 [label="FrequencyOfUse
+version: 1.0
+id: Pass@BoostSingle@frequency"]
+	node67 -> node70 [id="node67->node70"]
+	node71 [label="FrequencyOfUseType
+
+Text: single"]
+	node70 -> node71 [id="node70->node71"]
+	node72 [label="UsageValidityPeriod
+version: 1.0
+id: Trip@BoostSingle@back@frequency"]
+	node67 -> node72 [id="node67->node72"]
+	node73 [label="UsageTrigger
+
+Text: purchase"]
+	node72 -> node73 [id="node72->node73"]
+	node74 [label="UsageEnd
+
+Text: standardDuration"]
+	node72 -> node74 [id="node72->node74"]
+	node75 [label="ActivationMeans
+
+Text: noneRequired"]
+	node72 -> node75 [id="node72->node75"]
+	node76 [label="FareStructureElement
+id: Tariff@BoostSingle@access_when
+version: 1.0
+Name: Access When"]
+	node50 -> node76 [id="node50->node76"]
+	node77 [label="TypeOfFareStructureElementRef
+version: fxc:v1.0
+ref: fxc:access_when"]
+	node76 -> node77 [id="node76->node77"]
+	node76 [label="GenericParameterAssignment
+version: 1.0
+order: 1
+id: Tariff@BoostSingle@access_when"]
+	node76 -> node76 [id="node76->node76"]
+	node78 [label="TypeOfAccessRightAssignmentRef
+version: fxc:v1.0
+ref: fxc:can_access_when"]
+	node76 -> node78 [id="node76->node78"]
+	node79 [label="FareDemandFactorRef
+version: 1.0
+ref: op@Tariff@Demand"]
+	node76 -> node79 [id="node76->node79"]
+	node80 [label=fareProducts
+]
+	node28 -> node80 [id="node28->node80"]
+	node81 [label="PreassignedFareProduct
+id: Trip@BoostSingle
+version: 1.0
+Name: Boost Single"]
+	node80 -> node81 [id="node80->node81"]
+	node82 [label="ChargingMomentRef
+version: fxc:v1.0
+ref: fxc:prepayment"]
+	node81 -> node82 [id="node81->node82"]
+	node83 [label="ChargingMomentType
+
+Text: beforeTravel"]
+	node81 -> node83 [id="node81->node83"]
+	node84 [label="TypeOfFareProductRef
+version: fxc:v1.0
+ref: fxc:standard_product@trip@single"]
+	node81 -> node84 [id="node81->node84"]
+	node85 [label="OperatorRef
+version: 1.0
+ref: noc:RBUS"]
+	node81 -> node85 [id="node81->node85"]
+	node86 [label=ConditionSummary
+]
+	node81 -> node86 [id="node81->node86"]
+	node87 [label="FareStructureType
+
+Text: zonalFare"]
+	node86 -> node87 [id="node86->node87"]
+	node88 [label="TariffBasis
+
+Text: zone"]
+	node86 -> node88 [id="node86->node88"]
+	node89 [label="IsPersonal
+
+Text: true"]
+	node86 -> node89 [id="node86->node89"]
+	node90 [label=validableElements
+]
+	node81 -> node90 [id="node81->node90"]
+	node91 [label="ValidableElement
+id: Trip@BoostSingle@travel
+version: 1.0
+Name: Boost Single"]
+	node90 -> node91 [id="node90->node91"]
+	node92 [label=fareStructureElements
+]
+	node91 -> node92 [id="node91->node92"]
+	node93 [label="FareStructureElementRef
+version: 1.0
+ref: Tariff@BoostSingle@access"]
+	node92 -> node93 [id="node92->node93"]
+	node94 [label="FareStructureElementRef
+version: 1.0
+ref: Tariff@BoostSingle@conditions_of_travel"]
+	node92 -> node94 [id="node92->node94"]
+	node95 [label="FareStructureElementRef
+version: 1.0
+ref: Tariff@BoostSingle@access_when"]
+	node92 -> node95 [id="node92->node95"]
+	node96 [label=accessRightsInProduct
+]
+	node81 -> node96 [id="node81->node96"]
+	node97 [label="AccessRightInProduct
+id: Trip@BoostSingle@travel@accessRight
+version: 1.0
+order: 1"]
+	node96 -> node97 [id="node96->node97"]
+	node98 [label="ValidableElementRef
+version: 1.0
+ref: Trip@BoostSingle@travel"]
+	node97 -> node98 [id="node97->node98"]
+	node99 [label="ProductType
+
+Text: other"]
+	node81 -> node99 [id="node81->node99"]
+	node100 [label=salesOfferPackages
+]
+	node28 -> node100 [id="node28->node100"]
+	node101 [label="SalesOfferPackage
+id: Trip@BoostSingle-SOP@Onboard
+version: 1.0
+Name: Onboard
+Description: Purchasable on board the bus, with cash or contactless card, as a paper ticket."]
+	node100 -> node101 [id="node100->node101"]
+	node102 [label=distributionAssignments
+]
+	node101 -> node102 [id="node101->node102"]
+	node103 [label="DistributionAssignment
+id: Trip@BoostSingle-SOP@Onboard@OnBoard
+version: any
+order: 1"]
+	node102 -> node103 [id="node102->node103"]
+	node104 [label="DistributionChannelRef
+version: fxc:v1.0
+ref: fxc:on_board"]
+	node103 -> node104 [id="node103->node104"]
+	node105 [label="DistributionChannelType
+
+Text: onBoard"]
+	node103 -> node105 [id="node103->node105"]
+	node106 [label="PaymentMethods
+
+Text: cash contactlessPaymentCard"]
+	node103 -> node106 [id="node103->node106"]
+	node107 [label=salesOfferPackageElements
+]
+	node101 -> node107 [id="node101->node107"]
+	node108 [label="SalesOfferPackageElement
+id: Trip@BoostSingle-SOP@Onboard@printed_ticket
+version: 1.0
+order: 1"]
+	node107 -> node108 [id="node107->node108"]
+	node109 [label="TypeOfTravelDocumentRef
+version: fxc:v1.0
+ref: fxc:printed_ticket"]
+	node108 -> node109 [id="node108->node109"]
+	node110 [label="PreassignedFareProductRef
+version: 1.0
+ref: Trip@BoostSingle"]
+	node108 -> node110 [id="node108->node110"]
+	node111 [label="FareFrame
 version: 1.0
 id: epd:UK:RBUS:FareFrame_UK_PI_FARE_PRICE:Line_RBUS:PH0005856:176:X4:op
 dataSourceRef: data_source
 responsibilitySetRef: tariffs"]
-	137382273027856 -> 137382271581712
-	137382271581840 [label="TypeOfFrameRef
+	node9 -> node111 [id="node9->node111"]
+	node112 [label="TypeOfFrameRef
 ref: fxc:UK:DFT:TypeOfFrame_UK_PI_FARE_PRICE:FXCP
 version: fxc:v1.0"]
-	137382271581712 -> 137382271581840
-	137382271581968 [label=FrameDefaults
+	node111 -> node112 [id="node111->node112"]
+	node113 [label=FrameDefaults
 ]
-	137382271581712 -> 137382271581968
-	137382271582480 [label=priceGroups
+	node111 -> node113 [id="node111->node113"]
+	node114 [label="DefaultCurrency
+
+Text: GBP"]
+	node113 -> node114 [id="node113->node114"]
+	node115 [label=priceGroups
 ]
-	137382271581712 -> 137382271582480
-	137382271585488 [label=fareTables
+	node111 -> node115 [id="node111->node115"]
+	node116 [label="PriceGroup
+id: price_band_2.0
+version: 1.0"]
+	node115 -> node116 [id="node115->node116"]
+	node117 [label=members
 ]
-	137382271581712 -> 137382271585488
-	137382271875920 [label="CompositeFrame
-id: fxc:UK:DFT:TypeOfFrame_UK_PI_METADATA_OFFER:FXCP:fxc
-version: fxc:v1.0
-responsibilitySetRef: fxc:FXC_metadata
-dataSourceRef: fxc:common"]
-	137382273024912 -> 137382271875920
-	137382271876048 [label=ValidBetween
+	node116 -> node117 [id="node116->node117"]
+	node118 [label="GeographicalIntervalPrice
+version: 1.0
+id: price_band_2.0@BoostSingle"]
+	node117 -> node118 [id="node117->node118"]
+	node119 [label="Amount
+
+Text: 2.0"]
+	node118 -> node119 [id="node118->node119"]
+	node120 [label="PriceGroup
+id: price_band_1.6
+version: 1.0"]
+	node115 -> node120 [id="node115->node120"]
+	node121 [label=members
 ]
-	137382271875920 -> 137382271876048
-	137382271876240 [label=FromDate
+	node120 -> node121 [id="node120->node121"]
+	node122 [label="GeographicalIntervalPrice
+version: 1.0
+id: price_band_1.6@BoostSingle"]
+	node121 -> node122 [id="node121->node122"]
+	node123 [label="Amount
+
+Text: 1.6"]
+	node122 -> node123 [id="node122->node123"]
+	node124 [label="PriceGroup
+id: price_band_1.9
+version: 1.0"]
+	node115 -> node124 [id="node115->node124"]
+	node125 [label=members
 ]
-	137382271876048 -> 137382271876240
-	137382271876496 [label=ToDate
+	node124 -> node125 [id="node124->node125"]
+	node126 [label="GeographicalIntervalPrice
+version: 1.0
+id: price_band_1.9@BoostSingle"]
+	node125 -> node126 [id="node125->node126"]
+	node127 [label="Amount
+
+Text: 1.9"]
+	node126 -> node127 [id="node126->node127"]
+	node128 [label="PriceGroup
+id: price_band_1.7
+version: 1.0"]
+	node115 -> node128 [id="node115->node128"]
+	node129 [label=members
 ]
-	137382271876048 -> 137382271876496
-	137382271876752 [label=Name
+	node128 -> node129 [id="node128->node129"]
+	node130 [label="GeographicalIntervalPrice
+version: 1.0
+id: price_band_1.7@BoostSingle"]
+	node129 -> node130 [id="node129->node130"]
+	node131 [label="Amount
+
+Text: 1.7"]
+	node130 -> node131 [id="node130->node131"]
+	node132 [label=fareTables
 ]
-	137382271875920 -> 137382271876752
-	137382271877008 [label="TypeOfFrameRef
-version: fxc:v1.0
-ref: fxc:UK:DFT:TypeOfFrame_UK_PI_METADATA_OFFER:FXCP:fxc"]
-	137382271875920 -> 137382271877008
-	137382271877200 [label=FrameDefaults
-]
-	137382271875920 -> 137382271877200
-	137382271877392 [label="DefaultCodespaceRef
-ref: fxc"]
-	137382271877200 -> 137382271877392
-	137382271877520 [label="DefaultDataSourceRef
-ref: fxc:common
-version: fxc:v1.0"]
-	137382271877200 -> 137382271877520
-	137382271877648 [label="DefaultResponsibilitySetRef
-ref: fxc:FXC_metadata
-version: fxc:v1.0"]
-	137382271877200 -> 137382271877648
-	137382271877776 [label=frames
-]
-	137382271875920 -> 137382271877776
-	137382271877968 [label="FareFrame
-id: fxc:Common_UK_Fare_Components
-version: fxc:v1.0
-responsibilitySetRef: fxc:FXC_metadata"]
-	137382271877776 -> 137382271877968
-	137382271878096 [label=Name
-]
-	137382271877968 -> 137382271878096
-	137382271878352 [label=FrameDefaults
-]
-	137382271877968 -> 137382271878352
-	137382271878928 [label="PricingParameterSet
-id: fxc:Common_Resources
-version: fxc:v1.0"]
-	137382271877968 -> 137382271878928
-	137382271881040 [label=geographicalUnits
-]
-	137382271877968 -> 137382271881040
-	137382271882384 [label=usageParameters
-]
-	137382271877968 -> 137382271882384
-	137382271888976 [label=distributionChannels
-]
-	137382271877968 -> 137382271888976
-	137382271899984 [label=fulfilmentMethods
-]
-	137382271877968 -> 137382271899984
-	137382271928592 [label=typesOfTravelDocuments
-]
-	137382271877968 -> 137382271928592
-	137382271935696 [label="ResourceFrame
-id: fxc:UK_Bus_Tariffs@Common_Resources
-version: fxc:v1.0
-responsibilitySetRef: fxc:FXC_metadata
-dataSourceRef: fxc:common"]
-	137382271877776 -> 137382271935696
-	137382271935824 [label=Name
-]
-	137382271935696 -> 137382271935824
-	137382271936080 [label=codespaces
-]
-	137382271935696 -> 137382271936080
-	137382271943568 [label=FrameDefaults
-]
-	137382271935696 -> 137382271943568
-	137382271946512 [label=versions
-]
-	137382271935696 -> 137382271946512
-	137382271947344 [label=dataSources
-]
-	137382271935696 -> 137382271947344
-	137382271947984 [label=responsibilitySets
-]
-	137382271935696 -> 137382271947984
-	137382271949648 [label=typesOfValue
-]
-	137382271935696 -> 137382271949648
-	137382272023760 [label=organisations
-]
-	137382271935696 -> 137382272023760
+	node111 -> node132 [id="node111->node132"]
+	node1 -> node13 [color=blue style=dashed]
 	rankdir=LR
 }
